@@ -43,11 +43,18 @@ public class MainActivity extends AppCompatActivity {
        // bottomNavigationView = findViewById(R.id.bottomNavigation);
 
         navController = Navigation.findNavController(this,R.id.main);
-        appBarConfiguration = new AppBarConfiguration.Builder(new int[]{R.id.homeFragment,R.id.termsCondition})
+      //  appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph())
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.homeFragment,R.id.termsCondition)
                 .setDrawerLayout(drawer)
                 .build();
     }
 
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        NavController navController = Navigation.findNavController(this, R.id.main);
+//        return NavigationUI.navigateUp(navController, appBarConfiguration)
+//                || super.onSupportNavigateUp();
+//    }
 
     @Override
     public boolean onSupportNavigateUp() {
